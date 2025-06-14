@@ -1,0 +1,203 @@
+---
+title: "Tech Guyzz Component Library and Documentation"
+publishedAt: "2024-03-20"
+summary: "Explore our comprehensive component library and learn how to use our UI components in your projects."
+tag: "Technical Documentation"
+---
+
+At Tech Guyzz, we maintain a robust component library that helps us deliver consistent, high-quality user interfaces across all our projects. Our components are built with React and TypeScript, ensuring type safety and maintainability.
+
+## Component Showcase
+
+Here's a showcase of some of our most commonly used components:
+
+### Feedback Component
+
+Use our feedback component to display important messages to users, such as success notifications, warnings, or error messages.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    codeHeight={24}
+    codePreview={<Feedback icon title="Success" variant="success" description="Your changes have been saved successfully." marginBottom="24"/>}
+    codes={[
+      {
+        code:
+`<Feedback
+    icon
+    variant="success"
+    title="Success"
+    description="Your changes have been saved successfully."
+/>`,
+        language: "tsx",
+        label: "Feedback Component"
+      }
+    ]}
+/>
+</Column>
+
+### Data Tables
+
+Our table component is perfect for displaying structured data with sorting and filtering capabilities.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    codePreview={
+    <Table 
+      data={{
+        headers: [
+          { content: "Service", key: "service", sortable: true },
+          { content: "Technology", key: "tech", sortable: true },
+          { content: "Description", key: "description" }
+        ],
+        rows: [
+          ["Web Development", "React/Next.js", "Modern web applications with server-side rendering"],
+          ["Mobile Apps", "React Native", "Cross-platform mobile applications"],
+          ["Backend Services", "Node.js/Python", "Scalable API and microservices"],
+          ["Cloud Solutions", "AWS/Azure", "Cloud infrastructure and deployment"]
+        ]
+      }}
+    />}
+    codes={[
+      {
+        code:
+`<Table 
+    data={{
+      headers: [
+        { content: "Service", key: "service", sortable: true },
+        { content: "Technology", key: "tech", sortable: true },
+        { content: "Description", key: "description" }
+      ],
+      rows: [
+        ["Web Development", "React/Next.js", "Modern web applications with server-side rendering"],
+        ["Mobile Apps", "React Native", "Cross-platform mobile applications"],
+        ["Backend Services", "Node.js/Python", "Scalable API and microservices"],
+        ["Cloud Solutions", "AWS/Azure", "Cloud infrastructure and deployment"]
+      ]
+    }}
+/>`,
+        language: "tsx",
+        label: "Table Component"
+      }
+    ]}
+/>
+</Column>
+
+### Code Documentation
+
+Our code documentation components help you showcase code snippets with syntax highlighting and interactive features.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    codes={[
+      {
+        code:
+`// Example of a React component
+import React from 'react';
+
+interface ButtonProps {
+  label: string;
+  onClick: () => void;
+  variant?: 'primary' | 'secondary';
+}
+
+export const Button: React.FC<ButtonProps> = ({
+  label,
+  onClick,
+  variant = 'primary'
+}) => {
+  return (
+    <button 
+      className={\`btn btn-\${variant}\`}
+      onClick={onClick}
+    >
+      {label}
+    </button>
+  );
+};`,
+        language: "tsx",
+        label: "Component Example"
+      }
+    ]}
+/>
+</Column>
+
+### Interactive Components
+
+Our accordion component is perfect for FAQs, documentation, and other expandable content.
+
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
+<CodeBlock
+    radius="none"
+    topRadius="l"
+    codePreview={
+      <AccordionGroup 
+        items={[
+          {
+            title: "What services does Tech Guyzz offer?",
+            content: <Text variant="body-default-s" onBackground="neutral-weak">
+              We offer a comprehensive range of software development services including web development, 
+              mobile app development, cloud solutions, and custom software development.
+            </Text>
+          },
+          {
+            title: "What technologies do you use?",
+            content: <Text variant="body-default-s" onBackground="neutral-weak">
+              Our tech stack includes React, Next.js, Node.js, Python, and various cloud platforms. 
+              We choose the best technology for each project's specific needs.
+            </Text>
+          },
+          {
+            title: "How can I start a project with Tech Guyzz?",
+            content: <Text variant="body-default-s" onBackground="neutral-weak">
+              Contact us through our website or email us at contact@techguyzz.com. We'll schedule a 
+              consultation to discuss your project requirements.
+            </Text>
+          }
+        ]}
+      />
+    }
+    codes={[
+      {
+        code:
+`<AccordionGroup 
+    items={[
+      {
+        title: "What services does Tech Guyzz offer?",
+        content: <Text>We offer a comprehensive range of software development services...</Text>
+      },
+      {
+        title: "What technologies do you use?",
+        content: <Text>Our tech stack includes React, Next.js, Node.js...</Text>
+      }
+    ]}
+/>`,
+        language: "tsx",
+        label: "Accordion Component"
+      }
+    ]}
+/>
+</Column>
+
+## Using Our Components
+
+To use our components in your project:
+
+1. Install our component library:
+```bash
+npm install @techguyzz/components
+```
+
+2. Import the components you need:
+```typescript
+import { Button, Table, Feedback } from '@techguyzz/components';
+```
+
+3. Start building your application with our pre-built components.
+
+For more information about our component library or to request custom components, contact our development team at dev@techguyzz.com.

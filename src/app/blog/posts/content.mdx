@@ -1,0 +1,118 @@
+---
+title: "Building a Modern Tech Company Website"
+summary: "Learn how to create a professional website for your tech company using modern web technologies."
+publishedAt: "2024-03-20"
+tag: "Web Development"
+---
+
+## Company Branding
+
+Your company's digital presence starts with strong branding. The `public/images/avatar.jpg` file serves as your company logo, appearing on the `/about` page and in dynamically generated `open-graph` images for social media sharing.
+
+## Brand Identity
+
+Replace the `src/app/favicon.ico` file with your company's favicon to maintain consistent branding across browser tabs.
+
+## Content Management
+
+The `resources/content.js` file is the central hub for managing your company's content. It supports custom components and dynamic content rendering, making it perfect for showcasing your tech company's services and expertise.
+
+<CodeBlock
+    marginBottom="16"
+    highlight="1-2"
+    codes={[
+  {
+    code:
+`import { InlineCode } from "@once-ui-system/core";
+import Link from "next/link";
+
+const company = {
+  ...
+};`,
+    language: "tsx",
+    label: "src/app/resources/content.js"
+  }
+]} />
+
+The imports above enable the use of `InlineCode` and `Link` components in your content, perfect for showcasing code snippets and technical documentation.
+
+### Company Profile
+
+Your company profile is displayed throughout the website, from the header to the about page. This includes your company name, location, and primary services.
+
+<CodeBlock
+    marginBottom="16"
+    highlight="2-3,7-10"
+    codes={[
+  {
+    code:
+`const company = {
+    name: "Tech Guyzz",
+    role: "Software Development Company",
+    avatar: "/images/avatar.jpg",
+    location: "Asia/Kolkata", // Company headquarters timezone
+    languages: ["English", "Hindi"], // Languages supported by your team
+};`,
+    language: "tsx",
+    label: "src/app/resources/content.js"
+  }
+]} />
+
+### Social Media Integration
+
+Connect your company's social media presence through the `social` object. This helps build your company's online presence and makes it easy for potential clients to find you.
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`const social = [
+    {
+      name: "GitHub",
+      icon: "github",
+      link: "https://github.com/techguyzz",
+    },
+    {
+      name: "LinkedIn",
+      icon: "linkedin",
+      link: "https://www.linkedin.com/company/techguyzz",
+    },
+    {
+      name: "Twitter",
+      icon: "twitter",
+      link: "https://twitter.com/techguyzz",
+    }
+];`,
+    language: "tsx",
+    label: "src/app/resources/content.js"
+  }
+]} />
+
+### Service Pages
+
+Each section of your website has its own configuration object, allowing you to showcase different aspects of your tech company, from services to case studies.
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`const services = {
+    label: "Services",
+    title: "Tech Guyzz - Software Development Solutions",
+    description: "Leading software development company specializing in custom solutions and digital transformation",
+    headline: <>Transforming Ideas into Powerful Software Solutions</>,
+    subline: (
+      <>
+        We are Tech Guyzz, a software development company dedicated to delivering innovative
+        <br /> solutions that drive business growth and digital transformation.
+      </>
+    ),
+};`,
+    language: "tsx",
+    label: "src/app/resources/content.js"
+  }
+]} />
+
+The `label` property defines the navigation menu item, while `title` and `description` are used for SEO and social media sharing. These elements are crucial for establishing your company's online presence and attracting potential clients.

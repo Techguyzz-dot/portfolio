@@ -1,0 +1,88 @@
+---
+title: "Tech Guyzz Blog System"
+summary: "Learn how to create and manage technical content in our blog system."
+publishedAt: "2024-03-20"
+tag: "Technical Writing"
+---
+
+## Content Management
+
+Our blog system allows you to create, edit, and manage technical content using MDX files in the `src/app/blog/posts` directory. This system is perfect for sharing technical insights, development updates, and company news.
+
+## Content Structure
+
+Each blog post requires frontmatter metadata to properly display and index the content. This includes the title, publication date, featured image, and relevant tags.
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+      {
+        code:
+`---
+title: "Building Scalable Applications with Next.js"
+publishedAt: "2024-03-20"
+image: "/images/blog/nextjs-architecture.jpeg"
+summary: "Learn how we build scalable web applications using Next.js and modern development practices."
+tag: "Web Development"
+---`,
+        language: "tsx",
+        label: "src/app/blog/posts/nextjs-architecture.mdx"
+      }
+    ]}
+/>
+
+## Technical Writing with MDX
+
+Our blog system uses MDX, which combines the simplicity of Markdown with the power of React components. This allows our technical writers to:
+- Write clear, structured content
+- Include interactive code examples
+- Embed technical diagrams and visualizations
+- Create dynamic, engaging technical documentation
+
+## Component Integration
+
+Our blog system comes with pre-built components specifically designed for technical content. These components are automatically available in all blog posts.
+
+<CodeBlock
+    marginBottom="16"
+    highlight="11-12"
+    codes={[
+      {
+        code:
+`const components = {
+    // Basic text elements
+    p: createParagraph as any,
+    h1: createHeading(1) as any,
+    h2: createHeading(2) as any,
+    h3: createHeading(3) as any,
+    h4: createHeading(4) as any,
+    h5: createHeading(5) as any,
+    h6: createHeading(6) as any,
+    
+    // Technical content components
+    CodeBlock, // For code examples
+    Table,     // For data tables
+    Diagram,   // For technical diagrams
+    API,       // For API documentation
+};`,
+        language: "tsx",
+        label: "src/components/mdx.tsx"
+      }
+    ]}
+/>
+
+These components are specifically designed for technical content, making it easy to:
+- Display code snippets with syntax highlighting
+- Create interactive API documentation
+- Include technical diagrams and flowcharts
+- Present data in structured tables
+
+## Development Workflow
+
+Our blog system supports a modern development workflow:
+1. Write content in MDX format
+2. Preview changes in real-time
+3. Review and edit content
+4. Deploy automatically through our CI/CD pipeline
+
+For more information about our blog system or to contribute technical content, contact our content team at content@techguyzz.com.
